@@ -1,3 +1,6 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+
 
 const pokemonList = [
   {
@@ -11,18 +14,59 @@ const pokemonList = [
 ];
 
 
+const PokemonCard = ({ pokemon }) => {
+  return (
+    <figure>
+      {pokemon.imgSrc != null ? (
+        <img src={pokemon.imgSrc} alt={pokemon.name} />
+      ) : (
+        <p>???</p>
+      )}
+      <figcaption>{pokemon.name}</figcaption>
+    </figure>
+  );
+};
+
+PokemonCard.propTypes = {
+  pokemon: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    imgSrc: PropTypes.string,
+  }).isRequired,
+};
+
+export default PokemonCard;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 function pokemonCard({Pokemon}) {
  const pokemon = pokemonList[0]
 console.log(pokemon); 
   return (
-    <figure>
-  {pokemon.imgSrc != null ?(<img src={pokemon.imgSrc} alt={pokemon.name} />) :( <p>???</p> )}
-      <figcaption>{pokemon.name}</figcaption>
-    </figure>
+ //   <figure>
+ // {pokemon.imgSrc != null ?(<img src={pokemon.imgSrc} alt={pokemon.name} />) :( <p>???</p> )}
+ //     <figcaption>{pokemon.name}</figcaption>
+ //   </figure>
   );
 }
 export default pokemonCard;
-
+*/
 
 
 
