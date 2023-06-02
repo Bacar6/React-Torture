@@ -13,9 +13,9 @@ const pokemonList = [
 ];
 
 const App = () => {
-  const selectedPokemon = pokemonList[0];
+  const Pokemon = pokemonList[0];
 
-  return <PokemonCard pokemon={selectedPokemon} />;
+  return <PokemonCard pokemon={pokemonList} />;
 };
 
 export default App;
