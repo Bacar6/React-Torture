@@ -1,3 +1,43 @@
+import React from "react";
+import PropTypes from "prop-types";
+
+const PokemonCard = ({ pokemon }) => {
+  return (
+    <figure>
+      {pokemon.imgSrc != null ? (
+        <img src={pokemon.imgSrc} alt={pokemon.name} />
+      ) : (
+        <p>???</p>
+      )}
+      <figcaption>{pokemon.name}</figcaption>
+    </figure>
+  );
+};
+
+PokemonCard.propTypes = {
+  pokemon: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    imgSrc: PropTypes.string,
+  }).isRequired,
+};
+
+export default PokemonCard;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{/* 
 //import React from 'react'; : Cette ligne importe le module React, qui est nécessaire pour définir les composants React.
 import React from 'react';
 
@@ -39,36 +79,36 @@ const PokemonCard = ({ pokemon }) => {
     <figure>
 
 {/* {pokemon.imgSrc != null ? ( ... ) : ( ... )} : Cette ligne utilise une expression ternaire pour effectuer un rendu conditionnel. Si pokemon.imgSrc n'est pas nul (null), alors le premier bloc (...) est exécuté, sinon le second bloc (...) est exécuté. */}
-      {pokemon.imgSrc != null ? (
+//      {pokemon.imgSrc != null ? (
 
 //{/*  <img src={pokemon.imgSrc} alt={pokemon.name} /> : Si pokemon.imgSrc n'est pas nul, cette ligne affiche une balise img avec la source de l'image (src) définie sur pokemon.imgSrc et l'attribut alt défini sur pokemon.name.   */}   
-        <img src={pokemon.imgSrc} alt={pokemon.name} />
-      ) : (
+ //       <img src={pokemon.imgSrc} alt={pokemon.name} />
+//      ) : (
 
 //{/* <p>???</p> : Si pokemon.imgSrc est nul, cette ligne affiche une balise p avec le texte "???". */}    
-        <p>???</p>
-      )}
+ //       <p>???</p>
+  //    )}
 
 //{/* <figcaption>{pokemon.name}</figcaption> : Cette ligne affiche le nom du Pokémon à l'intérieur d'une balise figcaption.*/} 
-      <figcaption>{pokemon.name}</figcaption>
-    </figure>
-  );
-};
+//      <figcaption>{pokemon.name}</figcaption>
+  //  </figure>
+ // );
+// };
 
  //{/* PokemonCard.propTypes = { ... } : Cette partie du code définit les prop types attendues par le composant PokemonCard. On utilise PropTypes.shape pour spécifier que pokemon doit être un objet avec une structure spécifique.
 // name: PropTypes.string.isRequired, : Cette ligne indique que la propriété name de l'objet pokemon doit être une chaîne de caractères requise.
 // imgSrc: PropTypes.string, : Cette ligne indique que la propriété imgSrc de l'objet pokemon est une chaîne de caractères optionnelle.*/} 
-PokemonCard.propTypes = {
-  pokemon: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    imgSrc: PropTypes.string,
-  }).isRequired,
-};
+// PokemonCard.propTypes = {
+//  pokemon: PropTypes.shape({
+//    name: PropTypes.string.isRequired,
+//    imgSrc: PropTypes.string,
+//  }).isRequired,
+// };
 
 //export default PokemonCard; : Cette ligne exporte le composant PokemonCard par défaut, ce qui signifie qu'il peut être importé et utilisé dans d'autres parties de l'application.
-export default PokemonCard;
+// export default PokemonCard;
 
-
+// */}
 
 
 

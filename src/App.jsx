@@ -1,3 +1,91 @@
+import PokemonCard from "./components/PokemonCard";
+import NavBar from "./NavBar";
+
+const pokemonList = [
+  {
+    name: "bulbasaur",
+    imgSrc:
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
+  },
+  {
+    name: "charmander",
+    imgSrc:
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
+  },
+  {
+    name: "squirtle",
+    imgSrc:
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
+  },
+  {
+    name: "pikachu",
+    imgSrc:
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
+  },
+  {
+    name: "mew",
+  },
+];
+
+const App = () => {
+  const [pokemonIndex, setPokemonIndex] = useState(0);
+
+  const buttonPrecedent = () => {
+    if (pokemonIndex > 0) {
+      setPokemonIndex(pokemonIndex - 1);
+    }
+  };
+
+  const buttonSuivant = () => {
+    if (pokemonIndex < pokemonList.length - 1) {
+      setPokemonIndex(pokemonIndex + 1);
+    }
+  };
+
+  const currentPokemon = pokemonList[pokemonIndex];
+
+  return (
+    <div>
+      <NavBar
+        onPrecedent={buttonPrecedent}
+        onSuivant={buttonSuivant}
+      />
+      <PokemonCard pokemon={currentPokemon} />
+    </div>
+  );
+};
+
+export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{/*   
 //Ce code est écrit en utilisant la bibliothèque React pour créer une application web. L'application affiche une liste de cartes Pokémon et permet de naviguer entre elles à l'aide de deux boutons "Précédent" et "Suivant".
 
 //Commençons par les importations. La première ligne importe React et useState depuis la bibliothèque React. Ensuite, PokemonCard est importé depuis un fichier de composant local ./components/PokemonCard. Ces importations permettent d'utiliser les fonctionnalités de React dans le code.
@@ -70,7 +158,7 @@ const App = () => {
 // Le code exporte ensuite le composant App par défaut, ce qui signifie qu'il peut être utilisé ailleurs dans l'application ou dans d'autres fichiers.
 export default App;
 
-
+*/}
 
 
 
