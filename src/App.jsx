@@ -1,5 +1,5 @@
 import PokemonCard from "./components/PokemonCard";
-import NavBar from "./NavBar";
+import NavBar from "./components/NavBar";
 
 const pokemonList = [
   {
@@ -28,6 +28,51 @@ const pokemonList = [
 ];
 
 const App = () => {
+  return (
+    <div>
+      {pokemonList.map((pokemon, index) => (
+        <PokemonCard key={index} pokemon={pokemon} />
+      ))}
+    </div>
+  );
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{
+  /*const App = () => {
+  const currentPokemon = pokemonList[0];
+
+  return (
+    <div>
+      <PokemonCard pokemon={currentPokemon} />
+    </div>
+  );
+};
+*/}
+
+
+
+
+{/*
+const App = () => {
   const [pokemonIndex, setPokemonIndex] = useState(0);
 
   const buttonPrecedent = () => {
@@ -54,6 +99,7 @@ const App = () => {
     </div>
   );
 };
+*/}
 
 export default App;
 
