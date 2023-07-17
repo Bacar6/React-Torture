@@ -1,6 +1,26 @@
-import React, { useState } from "react";
+import React from "react";
 
-const NavBar = ({ onPrecedent, onSuivant }) => {
+const NavBar = ({ pokemonList, onPokemonSelect }) => {
+  return (
+    <div>
+      {pokemonList.map((pokemon, index) => (
+        <button key={index} onClick={() => onPokemonSelect(index)}>
+          {pokemon.name}
+        </button>
+      ))}
+    </div>
+  );
+};
+
+
+
+
+
+
+
+
+{/*
+const NavBar = ({pokemonList}) => {
   return (
     <div>
       <button onClick={onPrecedent}>Précédent</button>
@@ -8,5 +28,5 @@ const NavBar = ({ onPrecedent, onSuivant }) => {
     </div>
   );
 };
-
+*/}
 export default NavBar;

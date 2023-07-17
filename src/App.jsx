@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import PokemonCard from "./components/PokemonCard";
 import NavBar from "./components/NavBar";
 
@@ -28,11 +29,23 @@ const pokemonList = [
 ];
 
 const App = () => {
+  const [pokemonIndex, setPokemonIndex] = useState(0);
+
+  const onPokemonSelect = (index) => {
+    setPokemonIndex(index);
+  };
+
   return (
     <div>
-      {pokemonList.map((pokemon, index) => (
-        <PokemonCard key={index} pokemon={pokemon} />
-      ))}
+      <NavBar
+        pokemonList={pokemonList}
+        onPokemonSelect={onPokemonSelect}
+      />
+      <div>
+        {pokemonList.map((pokemon, index) => (
+          <PokemonCard key={index} pokemon={pokemon} />
+        ))}
+      </div>
     </div>
   );
 };
@@ -44,6 +57,69 @@ const App = () => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{/*
+  const App = () => {
+  return ( 
+    <> 
+      <NavBar pokemonList={pokemonList}/>
+    <div>
+
+      {pokemonList.map((pokemon, index) => (
+        <PokemonCard key={index} pokemon={pokemon} />
+      ))}
+    </div>
+    </>
+  );
+};
+
+*/}
+
+
+
+
+
+
+
+
+//const [pokemonIndex, setPokemonIndex] = useState(0);
+
+//const buttonPrecedent = () => {
+ // if (pokemonIndex > 0) {
+ //   setPokemonIndex(pokemonIndex - 1);
+ // }
+//};
+
+//const buttonSuivant = () => {
+  //if (pokemonIndex < pokemonList.length - 1) {
+   // setPokemonIndex(pokemonIndex + 1);
+//  }
+//};
+
+//const currentPokemon = pokemonList[pokemonIndex];
+
+//return (
+ // <div>
+   // <NavBar
+     // onPrecedent={buttonPrecedent}
+    //  onSuivant={buttonSuivant}
+   // />
+   // <PokemonCard pokemon={currentPokemon} />
+ // </div>
+//);
 
 
 
